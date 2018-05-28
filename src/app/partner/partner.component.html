@@ -1,0 +1,25 @@
+<h2>My Partners</h2>
+
+<div class="inputpartners">
+  <label>Partner firstname:
+    <input #partnerFirstname/>
+  </label>
+  <label>Partner lastname:
+    <input #partnerLastname/>
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(partnerFirstname.value, partnerLastname.value); partnerFirstname.value=''; partnerLastname.value=''">
+    add
+  </button>
+</div>
+
+<ul class="partners">
+  <li *ngFor="let partner of partners">
+    <a routerLink="/detail/{{partner.id}}">
+      <span class="badge">{{partner.id}}</span> {{partner.lastname}}
+    </a>
+    <button class="delete" title="delete partner" (click)="delete(partner)">
+      delete
+    </button>
+  </li>
+</ul>

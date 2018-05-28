@@ -1,0 +1,15 @@
+<p>
+  search for bank-code!
+</p>
+
+<form>
+  <input type="text" class="txt" name="item" placeholder="Search.." [(ngModel)]="bankText" (blur)="searchForBankCode()">
+  <!--input type="submit" class="btn" [value]="btnText" (click)="searchForBankCode()"-->
+</form>
+
+<ul class="bankInfo">
+  <li>Bankleitzahl: {{ bankInfo.bankleitzahl }}</li>
+  <li>Bezeichnung: {{ bankInfo.bezeichnung }}</li>
+  <li>BIC: {{ bankInfo.bic }}</li>
+  <li>Kurzbezeichnung: {{ bankInfo.kurzbezeichnung }}</li>
+</ul>
